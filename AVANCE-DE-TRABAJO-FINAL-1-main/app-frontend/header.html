@@ -1,0 +1,100 @@
+<header class="main-header navbar navbar-expand-lg" id="header">
+  <div
+    class="container-fluid d-flex align-items-center justify-content-between p-0"
+  >
+    <!-- Izquierda -->
+    <div class="d-flex align-items-center">
+      <!-- Botón hamburguesa (solo móviles) -->
+      <button
+        class="navbar-toggler me-2 d-lg-none"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarMenu"
+        aria-controls="navbarMenu"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <img src="./assets/bi-list.svg" alt="" width="35px" height="35px" />
+      </button>
+
+      <!-- Marca -->
+      <a href="index.html" class="navbar-brand fw-bold text-white m-0">
+        UTP+Schedule
+      </a>
+    </div>
+
+    <!-- Derecha -->
+    <div class="d-flex align-items-center user-container">
+      <!-- JS inyecta user-info aquí SOLO si hay datos -->
+
+    </div>
+  </div>
+
+  <!-- Menú SOLO móviles -->
+  <div class="collapse navbar-collapse d-lg-none mt-2" id="navbarMenu">
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html"
+          ><i class="bi bi-house me-2"></i>Inicio</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="about.html"
+          ><i class="bi bi-info-circle me-2"></i>Sobre Nosotros</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="dashboard.html"
+          ><i class="bi bi-speedometer2 me-2"></i>Dashboard</a
+        >
+      </li>
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="academicDropdownMobile"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i class="bi bi-journal-bookmark me-2"></i>Gestión Académica
+        </a>
+        <ul
+          class="dropdown-menu dropdown-menu-dark"
+          aria-labelledby="academicDropdownMobile"
+        >
+          <li>
+            <a class="dropdown-item" href="schedule.html"
+              ><i class="bi bi-calendar me-2"></i>Horario</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item" href="tasks.html"
+              ><i class="bi bi-check2-square me-2"></i>Tareas</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item" href="resources.html"
+              ><i class="bi bi-book me-2"></i>Recursos</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item" href="stats.html"
+              ><i class="bi bi-bar-chart-line me-2"></i>Estadísticas</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link text-white"
+          href="#"
+          data-bs-toggle="modal"
+          data-bs-target="#loginModal"
+        >
+          <i class="bi bi-box-arrow-in-right me-2"></i>Login
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>

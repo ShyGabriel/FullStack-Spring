@@ -1,0 +1,99 @@
+/* Contenedor principal */
+.schedule-container {
+  padding: var(--space-xl) 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Encabezado */
+.schedule-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.schedule-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.schedule-header p {
+  color: var(--color-text-secondary);
+  font-size: 1.125rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Estado vacío */
+.empty-state {
+  text-align: center;
+  padding: var(--space-xxl);
+  color: var(--color-text-secondary);
+  background: var(--color-bg-secondary);
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-xl);
+}
+
+.empty-state i {
+  font-size: 3rem;
+  margin-bottom: var(--space-md);
+  opacity: 0.6;
+  display: block;
+}
+
+.empty-state h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.empty-state p {
+  font-size: 1rem;
+  margin-bottom: var(--space-md);
+}
+
+/* Botón moderno */
+.btn-modern {
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: var(--space-sm) var(--space-lg);
+  transition: all 0.3s ease;
+
+}
+
+.btn-modern:hover {
+  transform: translateY(-2px);
+
+  color: #fff;
+}
+
+/* Modal */
+.modal-content {
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+}
+
+.modal-header {
+  background: var(--color-bg-secondary);
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+}
+
+.modal-title {
+  font-weight: 600;
+}
+
+.modal-body label {
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.modal-footer {
+  border-top: 1px solid var(--color-border);
+}

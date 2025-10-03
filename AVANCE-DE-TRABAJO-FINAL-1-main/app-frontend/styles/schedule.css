@@ -1,0 +1,298 @@
+
+.week-info {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.week-info h3 {
+  color: var(--color-primary);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.week-info p {
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* Tabs Navigation */
+.nav-tabs {
+  border: none;
+  margin-bottom: 2rem;
+}
+
+.nav-tabs .nav-link {
+  background: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  margin-right: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link.active {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.nav-tabs .nav-link:hover:not(.active) {
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
+}
+
+/* Desktop Schedule Table */
+.schedule-table-container {
+  background: var(--color-bg-primary);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.schedule-table {
+  margin: 0;
+}
+
+.schedule-table th {
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
+  font-weight: 600;
+  padding: 1rem;
+  border: none;
+  text-align: center;
+}
+
+.schedule-table td {
+  background: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  vertical-align: middle;
+  text-align: center;
+  min-height: 60px;
+}
+
+.course-block {
+  background: var(--color-bg-secondary);
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-block;
+
+  transition: transform 0.2s ease;
+}
+
+.course-block:hover {
+  transform: translateY(-1px);
+}
+
+.course-block small {
+  display: block;
+  font-size: 0.7rem;
+  opacity: 0.9;
+  margin-top: 0.25rem;
+}
+
+/* Mobile Schedule Cards */
+.mobile-schedule {
+  display: none;
+}
+
+.day-card {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.day-card h4 {
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.mobile-event {
+  background: var(--color-bg-tertiary);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  border-left: 4px solid var(--color-primary);
+}
+
+.mobile-event:last-child {
+  margin-bottom: 0;
+}
+
+.mobile-event h5 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.mobile-event .time {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+
+.mobile-event .modality {
+  background: var(--color-primary);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+/* Activities Section */
+.activities-section {
+  margin-top: 3rem;
+}
+
+.activities-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.activity-card {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.activity-card h4 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.status-icon {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 0.75rem;
+}
+
+.status-delivered {
+  background: #10b981;
+}
+.status-pending {
+  background: #ef4444;
+}
+
+.activity-item {
+  background: var(--color-bg-tertiary);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  justify-content: between;
+  align-items: center;
+}
+
+.activity-item:last-child {
+  margin-bottom: 0;
+}
+
+.activity-name {
+  flex: 1;
+  font-weight: 500;
+}
+
+.activity-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-delivered {
+  background: #10b981;
+  color: white;
+}
+
+.badge-pending {
+  background: #ef4444;
+  color: white;
+}
+
+.badge-overdue {
+  background: #f59e0b;
+  color: white;
+}
+
+/* Add Course Button */
+.add-course-btn {
+  background: linear-gradient(135deg, var(--color-primary), #ff4081);
+  border: none;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 2rem;
+  transition: transform 0.2s ease;
+}
+
+.add-course-btn:hover {
+  transform: translateY(-2px);
+  color: white;
+  text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-container {
+    padding: 1rem;
+  }
+
+  .header-section h1 {
+    font-size: 2rem;
+  }
+
+  .desktop-schedule {
+    display: none;
+  }
+
+  .mobile-schedule {
+    display: block;
+  }
+
+  .activities-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .nav-tabs .nav-link {
+    margin-right: 0.25rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--color-text-secondary);
+}
+
+.empty-state i {
+  font-size: 3rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  display: block;
+}

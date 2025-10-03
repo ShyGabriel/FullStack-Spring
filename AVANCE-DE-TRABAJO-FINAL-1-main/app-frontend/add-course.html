@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agregar Curso - UniSchedule AI</title>
+    <meta
+      name="description"
+      content="Agrega nuevos cursos a tu horario universitario"
+    />
+
+    <link rel="stylesheet" href="styles/common.css" />
+    <link rel="stylesheet" href="styles/add-course.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <meta name="theme-color" content="#6366f1" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📅</text></svg>"
+    />
+  </head>
+
+  <body>
+    <div id="nav"></div>
+
+    <main>
+      <div class="add-course-container">
+        <div class="container">
+          <div class="text-center mb-4">
+            <h1>Agregar Nuevo Curso</h1>
+            <p class="text-muted">
+              Completa la información de tu curso para agregarlo al horario
+            </p>
+          </div>
+
+          <div class="form-card">
+            <form id="add-course-form">
+              <div class="form-group">
+                <label for="course-name" class="form-label"
+                  >Nombre del Curso</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="course-name"
+                  placeholder="Ej: Cálculo Diferencial"
+                  required
+                />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="course-code" class="form-label"
+                    >Código del Curso</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="course-code"
+                    placeholder="Ej: MAT101"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="credits" class="form-label">Créditos</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="credits"
+                    min="1"
+                    max="10"
+                    placeholder="3"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="professor" class="form-label">Profesor</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="professor"
+                  placeholder="Nombre del profesor"
+                />
+              </div>
+
+              <!-- Campo para número de sesiones -->
+              <div class="form-group">
+                <label for="sessions-count" class="form-label"
+                  >Número de Sesiones</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="sessions-count"
+                  min="1"
+                  max="4"
+                  value="1"
+                  required
+                />
+              </div>
+
+              <!-- Contenedor dinámico -->
+              <div id="sessions-container"></div>
+
+              <div class="form-group">
+                <label for="description" class="form-label"
+                  >Descripción (Opcional)</label
+                >
+                <textarea
+                  class="form-control"
+                  id="description"
+                  rows="3"
+                  placeholder="Información adicional sobre el curso..."
+                ></textarea>
+              </div>
+
+              <div class="d-flex gap-3 mt-4">
+                <button type="submit" class="btn btn-primary">
+                  <i class="bi bi-plus-lg me-2"></i>
+                  Agregar Curso
+                </button>
+                <a href="schedule.html" class="btn btn-secondary">
+                  <i class="bi bi-arrow-left me-2"></i>
+                  Volver al Horario
+                </a>
+              </div>
+            </form>
+
+            <div
+              class="course-preview"
+              id="course-preview"
+              style="display: none"
+            >
+              <h5><i class="bi bi-eye me-2"></i>Vista Previa</h5>
+              <div id="preview-content"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const sessionsInput = document.getElementById("sessions-count");
+      const sessionsContainer = document.getElementById("sessions-container");
+
+      function renderSessions() {
+        const count = parseInt(sessionsInput.value);
+        sessionsContainer.innerHTML = ""; // limpia antes de volver a renderizar
+
+        for (let i = 1; i <= count; i++) {
+          const sessionHTML = `
+            <div class="session-block mb-3 p-3 border rounded">
+                <h5>Sesión ${i}</h5>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Día</label>
+                        <select class="form-control" name="day-${i}" required>
+                            <option value="">Seleccionar día</option>
+                            <option value="monday">Lunes</option>
+                            <option value="tuesday">Martes</option>
+                            <option value="wednesday">Miércoles</option>
+                            <option value="thursday">Jueves</option>
+                            <option value="friday">Viernes</option>
+                            <option value="saturday">Sábado</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Ubicación/Aula</label>
+                        <input type="text" class="form-control" name="location-${i}" placeholder="Ej: Aula 205">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Hora Inicio</label>
+                        <input type="time" class="form-control" name="start-time-${i}" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Hora Fin</label>
+                        <input type="time" class="form-control" name="end-time-${i}" required>
+                    </div>
+                </div>
+            </div>
+            `;
+          sessionsContainer.insertAdjacentHTML("beforeend", sessionHTML);
+        }
+      }
+
+      // render inicial
+      renderSessions();
+
+      // cuando cambia el número de sesiones
+      sessionsInput.addEventListener("input", renderSessions);
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+<script type="module" src="scripts/main.js"></script>
+
+  </body>
+</html>

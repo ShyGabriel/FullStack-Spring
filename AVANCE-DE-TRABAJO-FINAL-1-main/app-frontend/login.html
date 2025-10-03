@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - PlanUp</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/common.css" />
+    <link rel="stylesheet" href="styles/login.css" />
+  </head>
+  <body class="d-flex align-items-center justify-content-center vh-100">
+    <main class="card shadow-lg p-4" style="max-width: 400px; width: 100%">
+      <h1 class="text-center mb-4">Inicia sesión</h1>
+
+      <form>
+        <div class="mb-3">
+          <label for="email" class="form-label">Correo electrónico</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="ejemplo@correo.com"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Contraseña</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            placeholder="********"
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 mb-3">
+          Iniciar sesión
+        </button>
+      </form>
+    </main>
+
+    <!-- Modal Recuperación -->
+    <div class="modal fade" id="resetModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content rounded-4">
+          <div class="modal-header">
+            <h5 class="modal-title">Recuperar Contraseña</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p class="text-muted">
+              Ingresa tu correo para recibir instrucciones de recuperación:
+            </p>
+            <input
+              type="email"
+              class="form-control"
+              placeholder="ejemplo@correo.com"
+            />
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">
+              Cancelar
+            </button>
+            <button class="btn btn-primary">Enviar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+<script type="module" src="scripts/main.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,136 @@
+<!-- Sidebar -->
+<nav class="sidebar" id="sidebar">
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li class="nav-item collapse-btn-box">
+      <button class="collapse-btn" id="collapseBtn" aria-label="Toggle sidebar">
+        <i class="bi bi-chevron-left" id="collapseIcon"></i>
+      </button>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="index.html"
+        ><i class="bi bi-house"></i><span class="link-text">Inicio</span></a
+      >
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="about.html"
+        ><i class="bi bi-info-circle"></i
+        ><span class="link-text">Sobre Nosotros</span></a
+      >
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="dashboard.html"
+        ><i class="bi bi-speedometer2"></i
+        ><span class="link-text">Dashboard</span></a
+      >
+    </li>
+    <li class="nav-item dropdown">
+      <a
+        class="nav-link dropdown-toggle"
+        href="#"
+        id="academicDropdown"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <i class="bi bi-journal-bookmark"></i
+        ><span class="link-text">Gestión Académica</span>
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="academicDropdown">
+        <li>
+          <a class="dropdown-item" href="schedule.html"
+            ><i class="bi bi-calendar"></i
+            ><span class="link-text">Horario</span></a
+          >
+        </li>
+        <li>
+          <a class="dropdown-item" href="tasks.html"
+            ><i class="bi bi-check2-square"></i
+            ><span class="link-text">Tareas</span></a
+          >
+        </li>
+        <li>
+          <a class="dropdown-item" href="resources.html"
+            ><i class="bi bi-book"></i
+            ><span class="link-text">Recursos</span></a
+          >
+        </li>
+        <li>
+          <a class="dropdown-item" href="stats.html"
+            ><i class="bi bi-bar-chart-line"></i
+            ><span class="link-text">Estadísticas</span></a
+          >
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <div class="mt-auto pt-3 border-top border-secondary">
+    <a
+      class="nav-link loginLinkDesktop"
+      href="#"
+      data-bs-toggle="modal"
+      data-bs-target="#loginModal"
+    >
+      <i class="bi bi-box-arrow-in-right"></i
+      ><span class="link-text">Login</span>
+    </a>
+  </div>
+</nav>
+
+<!-- Modal de Login -->
+<div
+  class="modal fade"
+  id="loginModal"
+  tabindex="-1"
+  aria-labelledby="loginModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content mcLogin">
+      <div class="modal-body">
+        <form id="loginForm">
+          <div class="mb-4">
+            <label for="codigo" class="form-label">Código de Usuario</label>
+            <input
+              type="text"
+              id="codigo"
+              class="form-control"
+              placeholder="u1234567"
+              required
+            />
+          </div>
+          <div class="mb-4 input-password-container">
+            <label for="password" class="form-label">Contraseña</label>
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              placeholder="•••••••"
+              required
+            />
+          </div>
+          <button type="button" id="loginBtn" class="btn w-100 mt-3">
+            Ingresar
+          </button>
+        </form>
+        <!-- Contenedor para el loader y textos de carga -->
+        <div id="modalLoaderOverlay" class="modal-loader-overlay">
+          <!-- <div class="loader loader--8"></div> -->
+          <div class="loading-text-container">
+            <p id="loadingText" class="loading-text"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="welcome-screen" class="welcome hidden">
+  <div class="welcome-content">
+    <h2 id="welcome-msg"></h2>
+    <p id="welcome-submsg"></p>
+    <button id="goDashboardBtn" class="btn btn-primary mt-3">
+      <a href="./dashboard.html">Dashboard</a>
+    </button>
+  </div>
+</div>
